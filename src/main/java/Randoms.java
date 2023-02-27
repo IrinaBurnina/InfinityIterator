@@ -1,0 +1,36 @@
+import java.util.*;
+import java.util.function.Consumer;
+
+public class Randoms implements Iterable<Integer> {
+    protected Random random;
+    protected Set<Integer> set = new HashSet<>();
+
+    public Randoms(int min, int max) {
+        int t;
+        random = new Random();
+        while (true) {
+            t = random.ints(min, (max + 1)).findFirst().getAsInt();
+            set.add(t);
+            System.out.println(t);
+            if (t == max) {
+                break;
+            }
+        }
+    }
+
+    @Override
+    public Iterator<Integer> iterator() {
+        return null;
+    }
+
+    @Override
+    public void forEach(Consumer<? super Integer> action) {
+        Iterable.super.forEach(action);
+    }
+
+    @Override
+    public Spliterator<Integer> spliterator() {
+        return Iterable.super.spliterator();
+    }
+
+}
