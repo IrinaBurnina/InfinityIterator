@@ -3,7 +3,7 @@ import java.util.function.Consumer;
 
 public class Randoms implements Iterable<Integer> {
     protected Random random;
-    protected Set<Integer> set = new HashSet<>();
+    protected Set<Integer> set = new TreeSet<>();
 
     public Randoms(int min, int max) {
         int t;
