@@ -1,5 +1,4 @@
 import java.util.*;
-import java.util.function.Consumer;
 
 public class Randoms implements Iterable<Integer> {
     protected Random random;
