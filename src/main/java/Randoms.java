@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Randoms implements Iterable<Integer> {
     protected Random random;
-    protected Set<Integer> set = new TreeSet<>();
+    protected List<Integer> set = new ArrayList<>();
 
     public Randoms(int min, int max) {
         int t;
@@ -10,7 +10,6 @@ public class Randoms implements Iterable<Integer> {
         while (true) {
             t = random.ints(min, (max + 1)).findFirst().getAsInt();
             set.add(t);
-            System.out.println(t);
             if (t == max) {
                 break;
             }
