@@ -23,8 +23,7 @@ public class Randoms implements Iterable<Integer> {
 
             @Override
             public Integer next() {
-                int number = random.ints(min, (max + 1)).findAny().getAsInt();
-                return number;
+                return random.ints(min, (max + 1)).findAny().getAsInt();
             }
         };
 
