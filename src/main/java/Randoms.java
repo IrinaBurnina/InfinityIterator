@@ -1,24 +1,32 @@
-import java.util.*;
+import java.util.Iterator;
+import java.util.Random;
 
 public class Randoms implements Iterable<Integer> {
     protected Random random;
-    protected List<Integer> set = new ArrayList<>();
+    private int max;
+    private int min;
 
     public Randoms(int min, int max) {
-        int t;
         random = new Random();
-        while (true) {
-            t = random.ints(min, (max + 1)).findFirst().getAsInt();
-            set.add(t);
-            if (t == max) {
-                break;
-            }
-        }
+        this.max = max;
+        this.min = min;
     }
 
     @Override
     public Iterator<Integer> iterator() {
-        return set.iterator();
-    }
+        return new Iterator<Integer>() {
 
+            @Override
+            public boolean hasNext() {
+                return true;
+            }
+
+            @Override
+            public Integer next() {
+                int number = random.ints(min, (max + 1)).findAny().getAsInt();
+                return number;
+            }
+        };
+
+    }
 }
